@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6366f1;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 transition-colors duration-500 antialiased;
+  min-height: 100vh;
+}
+
+.dark body {
+  @apply bg-slate-950 text-slate-50;
+}
+
+@layer components {
+  .btn {
+    @apply px-5 py-2.5 rounded-xl font-black text-xs uppercase tracking-widest transition-all active:scale-95 disabled:opacity-50 disabled:active:scale-100;
+  }
+  .btn-primary {
+    @apply bg-prime-primary text-white shadow-lg shadow-prime-primary/20 hover:shadow-prime-primary/40;
+  }
+  .card-prime {
+    @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500;
+  }
+}
+
+.gradient-heading {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-prime-primary to-indigo-400;
+}
