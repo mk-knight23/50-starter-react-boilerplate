@@ -1,63 +1,48 @@
-# AngularPrime - Premium Enterprise Boilerplate
+# 50-starter-react-boilerplate
 
-A high-fidelity, opinionated Angular 19 boilerplate engineered for high-performance frontend architectures. Modular, type-safe, and production-ready.
+**Theme: Fully Animated / Motion-heavy**
 
-## Overview
-AngularPrime replaces legacy React-based boilerplates with a robust reactive system powered by Angular Signals. It focuses on domain-driven modularity, architectural clarity, and design-system integration.
+A premium, fully animated React 19 starter with violet/fuchsia gradients, sophisticated motion effects, and production-ready architecture.
 
-## Features Comparison
+## Live Demo
 
-| Feature | Legacy (React) | AngularPrime (v2.0) |
-| :--- | :--- | :--- |
-| **Framework** | React 17/18 | **Angular 19 (Standalone)** |
-| **Reactivity** | Virtual DOM / Hooks | **Synchronous Reactive Signals** |
-| **State** | Context / Redux | **Service-based Signals Store** |
-| **Modularity** | Component-first | **Domain-Driven Module Structure** |
-| **Performance**| Moderate | **Fine-grained Change Detection** |
-| **Tech Stack** | React + CSS Modules | **Angular + Tailwind CSS + Lucide** |
+- **Vercel**: https://angularprime.vercel.app
+
+## Features
+- 🚀 High-Performance React Starter
+- 🎨 Fully Animated with Framer Motion
+- 💜 Violet/Fuchsia Gradient Palette
+- ⚡ Lightning-Fast via Vite 6
+- 📱 Fully Responsive
 
 ## Tech Stack
-- **Framework:** Angular 19+
-- **Reactivity:** Signals Core
-- **Styling:** Tailwind CSS (Design Tokens)
-- **Icons:** Lucide Angular
-- **Tooling:** Angular CLI
-- **Library:** Angular CDK & Material ready
+- **Frontend**: React 19, Tailwind CSS v4
+- **Build Tool**: Vite 6
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
 
-## Project Structure
-```text
-src/app/
-├── core/services/      # Global logic & interceptors
-├── shared/components/  # Atomic UI Kit
-├── features/           # Domain-driven features
-└── store/              # Global signal-based state
-```
-
-## Setup & Build Instructions
-
-### Prerequisites
-- Node.js 20.x or higher
-- npm 10.x or higher
-
-### Installation
+## Quick Start
 ```bash
 npm install
+npm run dev
 ```
 
-### Development
-```bash
-npm start
-```
-
-### Production Build
+## Build
 ```bash
 npm run build
 ```
 
 ## Deployment
-Optimized for enterprise static hosting (Firebase, Vercel, Netlify).
+
+Deployed to **Vercel** with zero-config. Push to main branch for automatic deployment.
+
+## Theme Identity
+This starter uses a **Fully Animated / Motion-heavy** aesthetic:
+- Violet (#8b5cf6) to fuchsia (#d946ef) gradient palette
+- Smooth entrance/exit animations
+- Interactive hover states
+- Glassmorphism effects
 
 ---
 
-**License:** MIT
-**Project Architect:** mk-knight23
+*Maintained by [Kazi Musharraf](https://github.com/mk-knight23)*
