@@ -2,7 +2,7 @@ import { Navbar, Hero, CodeShowcase, Footer } from './components';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-50">
       <Navbar />
       <main>
         <Hero />

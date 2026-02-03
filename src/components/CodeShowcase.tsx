@@ -1,134 +1,147 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Code2, Zap, Package, Terminal } from 'lucide-react';
 
 export function CodeShowcase() {
   return (
-    <section className="py-40 bg-gradient-to-b from-transparent via-violet-500/5 to-transparent">
-      <div className="max-w-7xl mx-auto px-10 grid lg:grid-cols-2 gap-20 items-center">
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="space-y-8"
+          className="text-center mb-16"
         >
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl font-black uppercase tracking-tighter italic"
-          >
-            From Static to <br /> <span className="text-violet-400 not-italic">Spectacular.</span>
-          </motion.h3>
-
-          <div className="space-y-6">
-            {[
-              { label: 'Animation', text: '60fps smooth transitions with Framer Motion spring physics.' },
-              { label: 'Bundle', text: 'Tree-shaken imports for minimal production payload.' },
-              { label: 'DX', text: 'Hot Module Replacement with instant feedback loops.' },
-            ].map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-start gap-4"
-              >
-                <motion.div
-                  animate={{ rotate: [0, 90, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                  className="p-3 bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 rounded-lg text-violet-400"
-                >
-                  <div className="w-4 h-4 bg-violet-400 rounded-sm" />
-                </motion.div>
-                <div>
-                  <span className="font-bold text-white">{item.label}:</span>{' '}
-                  <span className="text-white/40">{item.text}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Everything You Need to{' '}
+            <span className="gradient-text">Ship Faster</span>
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            A complete development environment with modern tooling and best practices built-in.
+          </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative"
-        >
-          <motion.div
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-            className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 blur-[120px] rounded-full"
-          />
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative glass border border-white/10 p-10 rounded-[3rem] space-y-8 backdrop-blur-2xl bg-white/5"
-          >
-            <div className="flex items-center gap-4 pb-8 border-b border-white/5">
-              <div className="flex gap-2">
-                <motion.div
-                  animate={{ scale: [1, 0.8, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="w-3 h-3 rounded-full bg-red-500/50"
-                />
-                <motion.div
-                  animate={{ scale: [1, 0.8, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
-                  className="w-3 h-3 rounded-full bg-amber-500/50"
-                />
-                <motion.div
-                  animate={{ scale: [1, 0.8, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
-                  className="w-3 h-3 rounded-full bg-green-500/50"
-                />
-              </div>
-            </div>
-
+        {/* Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {[
+            {
+              icon: Code2,
+              title: 'TypeScript First',
+              desc: 'Full type safety with strict configuration and no any types allowed.',
+              color: 'from-blue-500 to-cyan-500',
+            },
+            {
+              icon: Zap,
+              title: 'Vite Powered',
+              desc: 'Lightning fast HMR and optimized builds for production.',
+              color: 'from-amber-400 to-orange-500',
+            },
+            {
+              icon: Package,
+              title: 'Feature Based',
+              desc: 'Scalable architecture with domain-driven folder structure.',
+              color: 'from-violet-500 to-purple-500',
+            },
+            {
+              icon: Terminal,
+              title: 'Testing Ready',
+              desc: 'Vitest + Testing Library setup with coverage reporting.',
+              color: 'from-emerald-400 to-teal-500',
+            },
+            {
+              icon: Code2,
+              title: 'ESLint + Prettier',
+              desc: 'Consistent code style with automated formatting and linting.',
+              color: 'from-rose-400 to-pink-500',
+            },
+            {
+              icon: Zap,
+              title: 'Git Hooks',
+              desc: 'Husky pre-commit hooks to ensure code quality.',
+              color: 'from-indigo-400 to-blue-500',
+            },
+          ].map((feature, index) => (
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="space-y-4 font-mono text-sm"
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -4 }}
+              className="card card-hover p-6"
             >
-              <motion.p
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                className="text-violet-400/60"
+              <div
+                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 shadow-lg`}
               >
-                // Reactive State Management
-              </motion.p>
-              <motion.code
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="block text-white"
-              >
-                <span className="text-fuchsia-400">const</span> count ={' '}
-                <span className="text-violet-400">signal</span>(0);
-              </motion.code>
-              <motion.code
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="block text-white"
-              >
-                <span className="text-fuchsia-400">const</span> double ={' '}
-                <span className="text-violet-400">computed</span>(() =&gt; count() * 2);
-              </motion.code>
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                className="h-20"
-              />
+                <feature.icon className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-bold text-slate-900 mb-2">{feature.title}</h3>
+              <p className="text-sm text-slate-500">{feature.desc}</p>
             </motion.div>
-          </motion.div>
+          ))}
+        </div>
+
+        {/* Code Preview */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto"
+        >
+          <div className="card overflow-hidden">
+            <div className="flex items-center gap-2 px-4 py-3 bg-slate-900 border-b border-slate-700">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-rose-500" />
+                <div className="w-3 h-3 rounded-full bg-amber-500" />
+                <div className="w-3 h-3 rounded-full bg-emerald-500" />
+              </div>
+              <span className="ml-4 text-xs text-slate-400">App.tsx</span>
+            </div>
+            <div className="p-6 bg-slate-900 overflow-x-auto">
+              <pre className="text-sm font-mono">
+                <code>
+                  <span className="text-purple-400">import</span>
+                  <span className="text-slate-300"> {'{ useState }'} </span>
+                  <span className="text-purple-400">from</span>
+                  <span className="text-green-400"> 'react'</span>
+                  <span className="text-slate-300">;</span>
+                  {'\n'}
+                  {'\n'}
+                  <span className="text-purple-400">export function</span>
+                  <span className="text-blue-400"> Counter</span>
+                  <span className="text-slate-300">() {'{'}</span>
+                  {'\n'}
+                  <span className="text-slate-300"> {'  '}const [count, setCount] = </span>
+                  <span className="text-blue-400">useState</span>
+                  <span className="text-slate-300">(0);</span>
+                  {'\n'}
+                  {'\n'}
+                  <span className="text-slate-300"> {'  '}return (</span>
+                  {'\n'}
+                  <span className="text-slate-300"> {'    '}&lt;</span>
+                  <span className="text-blue-400">button</span>
+                  {'\n'}
+                  <span className="text-slate-300"> {'      '}onClick={'{'}() =&gt;</span>
+                  <span className="text-blue-400">setCount</span>
+                  <span className="text-slate-300">(c =&gt; c + 1){'}'}</span>
+                  {'\n'}
+                  <span className="text-slate-300"> {'    '}&gt;</span>
+                  {'\n'}
+                  <span className="text-slate-300"> {'      '}Count: {'{count}'}</span>
+                  {'\n'}
+                  <span className="text-slate-300"> {'    '}&lt;/</span>
+                  <span className="text-blue-400">button</span>
+                  <span className="text-slate-300">&gt;</span>
+                  {'\n'}
+                  <span className="text-slate-300"> {'  '});</span>
+                  {'\n'}
+                  <span className="text-slate-300">{'}'}</span>
+                </code>
+              </pre>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
