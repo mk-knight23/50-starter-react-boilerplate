@@ -6,8 +6,9 @@ A production-ready React 19 boilerplate with clean architecture, type safety, an
 
 ## Live Demo
 
-- **Vercel**: https://50-starter-react-boilerplate.vercel.app ✓
-- **Cloudflare Pages**: https://50-starter-react-boilerplate.pages.dev ✓
+- **Vercel**: https://50-starter-react-boilerplate.vercel.app
+- **Firebase**: https://my-courses-5504f.web.app
+- **Azure Static Web Apps**: https://purple-meadow-0b3e5320f.4.azurestaticapps.net
 
 ## Features
 

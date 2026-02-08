@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Menu, X, Github, Sparkles } from 'lucide-react';
+import { SearchComponent } from './Search';
 
 const navLinks = [
   { label: 'Features', href: '#features' },
@@ -66,6 +67,12 @@ export function Navbar() {
               {link.label}
             </motion.a>
           ))}
+
+          <SearchComponent
+            onResultSelect={(result) => {
+              window.location.href = result.url;
+            }}
+          />
         </motion.div>
 
         <motion.div

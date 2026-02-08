@@ -1,0 +1,63 @@
+name: Documentation Build
+
+on:
+  push:
+    paths:
+      - 'content/**'
+      - 'src/components/DocumentationPage.tsx'
+      - 'src/utils/contentLoader.ts'
+      - 'src/types/content.ts'
+  pull_request:
+    paths:
+      - 'content/**'
+      - 'src/components/DocumentationPage.tsx'
+      - 'src/utils/contentLoader.ts'
+      - 'src/types/content.ts'
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build documentation
+        run: npm run build:docs
+
+      - name: Upload documentation
+        uses: actions/upload-artifact@v3
+        with:
+          name: documentation
+          path: dist/docs/
+
+  validate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate markdown files
+        run: npx markdownlint-cli content/**/*.md --config .markdownlint.json
+
+      - name: Check for broken links
+        run: npm run check-links
