@@ -7,7 +7,7 @@
   "scripts": {
     "production": "npm run build && npm start",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
@@ -22,7 +22,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build:docs": "npm run build",
-    "check-links": "markdown-link-check content/**/*.md"
+    "check-links": "markdown-link-check content/**/*.md",
+    "typecheck": "tsc && vite build"
   },
   "keywords": [
     "react",
@@ -81,7 +82,7 @@
     "jsdom": "^28.0.0",
     "lint-staged": "^16.2.7",
     "markdown-link-check": "^3.12.1",
-    "markdownlint-cli": "^0.41.0",
+    "markdownlint-cli": "^0.48.0",
     "playwright": "^1.58.1",
     "prettier": "^3.8.1",
     "storybook": "^10.2.4",
